@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-function Movie({movie}){
+function Movie({ movie }){
 return (
     <tr>
         <td> 
@@ -10,11 +10,11 @@ return (
                 <span>&nbsp; &nbsp; &nbsp;</span>
             )}
         </td>
-        <tdc style={{cursor: "alias"}}>
-        <a href={movie.released} target="_blank" rel="noreferrer">
+        <td style={{cursor: "alias"}}>
+        <a href={movie.url} target="_blank" rel="noreferrer">
             {movie.title}
         </a>
-            </td>
+        </td>
             <td>
                 <Link to={`/movies/${movie.id}`}>🎥</Link>
             </td>
