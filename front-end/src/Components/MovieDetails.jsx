@@ -1,4 +1,4 @@
-import { useState, useEffect, handleDelete } from "react";
+import { useState, useEffect} from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Favorites from  "./Favorites";
 const API = import.meta.env.VITE_BASE_URL
@@ -18,8 +18,8 @@ function MovieDetails(){
     }, [id, API])
 
     const handleDelete = () => {
-        deleteMovie()
-    }
+        deleteMovie();
+    };
 
     const deleteMovie = () => {
         const httpOptions = { method: "DELETE"}
