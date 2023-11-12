@@ -1,11 +1,12 @@
 import { useState, useEffect} from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Favorites from  "./Favorites";
+import Favorites from "./Favorites"
+
 const API = import.meta.env.VITE_BASE_URL
 
 function MovieDetails(){
     const [movie, setMovie] = useState([]);
-    const {id} = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,8 +19,8 @@ function MovieDetails(){
     }, [id, API])
 
     const handleDelete = () => {
-        deleteMovie();
-    };
+        deleteMovie()
+    }
 
     const deleteMovie = () => {
         const httpOptions = { method: "DELETE"}
@@ -27,7 +28,7 @@ function MovieDetails(){
         .then(() =>  navigate(`/movies`))
         .catch(error => console.log(error)) 
     }
-}
+
     return (
         <article>
             <h3>{true ? <span>🍿</span> : null}</h3>
@@ -38,7 +39,7 @@ function MovieDetails(){
                 &nbsp;&nbsp;&nbsp;&nbsp; {movie.url}
             </h5>
             <h6>{movie.genre}</h6>
-            <h6>{movie.description}</h6>
+            <h6>{movie.rated}</h6>
                 <div className="showNavigation">
                     <div>
                         <Link to={`/movies`}>
@@ -56,5 +57,5 @@ function MovieDetails(){
         </article>
     );
 
-
+    }
 export default MovieDetails;
