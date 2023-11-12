@@ -10,6 +10,7 @@ function MovieEditForm(){
 
     const [movie, setMovie] = useState({
         title: "", 
+        url: "",
         released: "", 
         director: "", 
         genre: "", 
