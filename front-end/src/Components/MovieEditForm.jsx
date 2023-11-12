@@ -25,7 +25,7 @@ function MovieEditForm(){
 
     const handleCheckboxChange = () => {
         setMovie({...movie, is_favorite: !movie.is_favorite});
-    };
+    
 
     const updateMovie = () => {
         console.log(`${API}/movies/${id}`);
@@ -41,8 +41,8 @@ function MovieEditForm(){
             navigate(`/movies/${id}`);
         })
         .catch((error) => console.error("catch", error));
-    };
-
+    
+    
     useEffect(() => {
         fetch(`${API}/movies/${id}`)
         .then((response) => {
@@ -53,12 +53,12 @@ function MovieEditForm(){
         })
         .catch((error) => console.error(error));
     }, [id]);
-
+}
     const handleSubmit = (event) => {
         event.preventDefault();
         updateMovie();
-    };
-
+    
+}
     return(
         <div className="Edit">
             <form onSubmit={handleSubmit}>
@@ -87,7 +87,7 @@ function MovieEditForm(){
                 type="text"
                 name="genre"
                 value={movie.genre}
-                placeholder=""
+                placeholder="Action, Comedy, ..."
                 onChange={handleTextChange}
                 />
                 <label htmlFor="isFavorite">Favorite:</label>
@@ -97,7 +97,7 @@ function MovieEditForm(){
                 onChange={handleCheckboxChange}
                 checked={movie.is_favorite}
                 />
-                <label htmlFor="description">Description:</label>
+                {/* <label htmlFor="description">Description:</label>
                 <textarea 
                 id="description"
                 name="description"
@@ -105,7 +105,7 @@ function MovieEditForm(){
                 onChange={handleTextChange}
                 placeholder="Why is this movie considered your favorite?"
                 />
-                <br />
+                <br /> */}
 
                 <input type="submit" />
                 </form>
@@ -115,5 +115,5 @@ function MovieEditForm(){
         </div>
     );
 }
-
+}
 export default MovieEditForm;
