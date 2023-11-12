@@ -1,10 +1,10 @@
-import MoviesNewForm from "../Components/MoviesNewForm";
+import MovieNewForm from "../Components/MovieNewForm";
 
 function New(){
     return (
         <div className="New">
           <h2>New</h2>
-          <MoviesNewForm />
+          <MovieNewForm />
         </div>
       );
 }
