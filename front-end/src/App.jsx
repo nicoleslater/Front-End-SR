@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* Include your NavBar component here */}
+       <NavBar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -18,6 +18,7 @@ function App() {
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
+        
       </Router>
     </div>
   );
