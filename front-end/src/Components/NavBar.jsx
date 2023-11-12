@@ -1,13 +1,17 @@
-export default function NavBar(){
+import { Link } from "react-router-dom";
+
+export default function NavBar() {
     return (
-        <header>
-          <img src="../public/photo-1623475329493-889804e377f8.avif"></img>
-          <Link to="/">
-            <h2>Home</h2>
-          </Link>
-          <Link to="/about">
-            <h2>About Us!</h2>
-          </Link>
-        </header>
-      );
-}
+      <nav>
+        <h1>
+          <Link to="/">Home</Link>
+        </h1>
+        <button>
+          <Link to="/Movie/new">New Movies</Link>
+        </button>
+        <button>
+          <Link to="/Movie/favorites">Favorites</Link>
+        </button>
+      </nav>
+    );
+  }

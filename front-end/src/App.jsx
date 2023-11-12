@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -14,7 +13,7 @@ function App() {
             <Route path="/Movies/new" element={<New />} />
             <Route exact path="/Movies/:id" element={<Show />} />
             <Route path="/Movies/:id/edit" element={<Edit />} />
-            <Route path="/Favorites" element={<Favorites />} />
+            <Route path="Movies/favorites" element={<Favorites />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
